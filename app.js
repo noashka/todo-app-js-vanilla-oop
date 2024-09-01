@@ -45,3 +45,17 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   LocalStorage.load();
 });
+
+document.addEventListener("keydown", (event) => {
+  if (event.ctrlKey && event.key === "Enter") {
+    event.preventDefault();
+    const cmd = new Command(Commands.ADD);
+    CommandExecutor.execute(cmd);
+  }
+
+  if (event.ctrlKey && event.key === "z") {
+    event.preventDefault();
+    const cmd = new Command(Commands.UNDO);
+    CommandExecutor.execute(cmd);
+  }
+});
