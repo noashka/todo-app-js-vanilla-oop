@@ -1,4 +1,4 @@
-import { observer } from "./mixins.js";
+import { observer } from "./observer.js";
 
 export class TodoItem {
   constructor(text) {
